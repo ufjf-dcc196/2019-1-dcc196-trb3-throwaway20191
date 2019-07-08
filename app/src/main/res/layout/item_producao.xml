@@ -20,7 +20,7 @@
         android:id="@+id/textItemInicio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:text="TextView"
         app:layout_constraintStart_toEndOf="@+id/textView4"
@@ -30,9 +30,11 @@
         android:id="@+id/textItemFim"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
         android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/textItemTitulo" />
 
@@ -52,32 +54,20 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="64dp"
         android:layout_marginTop="24dp"
         android:text="Fim"
         app:layout_constraintStart_toEndOf="@+id/textItemInicio"
         app:layout_constraintTop_toBottomOf="@+id/textItemTitulo" />
 
     <Button
-        android:id="@+id/buttonProducaoRemove"
-        style="@android:style/Widget.DeviceDefault.Button.Borderless"
-        android:layout_width="35dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="4dp"
-        android:text="X"
-        android:textColor="@color/colorAccent"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
         android:id="@+id/buttonProducaoEdit"
         style="@style/Widget.AppCompat.Button.Small"
         android:layout_width="83dp"
         android:layout_height="35dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="44dp"
         android:text="Editar"
-        app:layout_constraintEnd_toStartOf="@+id/buttonProducaoRemove"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

@@ -117,7 +117,7 @@ public class ProducaoActivity extends AppCompatActivity {
             LayoutInflater infl = LayoutInflater.from(context);
             View view = infl.inflate(R.layout.item_producao, viewGroup, false);
             ViewHolder holder = new ViewHolder(view);
-            view.findViewById(R.id.buttonProducaoRemove).setOnClickListener(holder);
+            view.findViewById(R.id.textItemTitulo).setOnClickListener(holder);
             view.findViewById(R.id.buttonProducaoEdit).setOnClickListener(holder);
             return holder;
         }
@@ -165,7 +165,7 @@ public class ProducaoActivity extends AppCompatActivity {
                         intent.putExtra("producao_id", this.item.id);
                         startActivityForResult(intent, RESULT_PRODUCAO_EDIT_ACTIVITY);
                         break;
-                    case R.id.buttonProducaoRemove:
+                    case R.id.textItemTitulo:
                     default:
                         intent = new Intent(ProducaoActivity.this, AtividadeActivity.class);
                         intent.putExtra("id", this.item.id);

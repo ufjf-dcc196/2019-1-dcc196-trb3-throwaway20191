@@ -102,7 +102,7 @@ public class ProducaoEditActivity extends AppCompatActivity {
         helper = new HeadHunterDBHelper(this);
         queryCategorias();
 
-        CategoriaAdapter adapter = new CategoriaAdapter(this);
+        CategoriaSpinnerAdapter adapter = new CategoriaSpinnerAdapter(this, categoriaList);
         spinner.setAdapter(adapter);
 
         final String producao_id = getIntent().getStringExtra("producao_id");
@@ -139,46 +139,10 @@ public class ProducaoEditActivity extends AppCompatActivity {
                     db.update(Contract.Producao.TABLE_NAME, values, where, args);
                     feedback = "atualizada";
                 }
-                Toast.makeText(ProducaoEditActivity.this,"Tarefa " + feedback + " com sucesso!", Toast.LENGTH_LONG).show();
+                Toast.makeText(ProducaoEditActivity.this,"Producao " + feedback + " com sucesso!", Toast.LENGTH_LONG).show();
                 setResult(Activity.RESULT_OK);
                 finish();
             }
         });
-    }
-
-    class CategoriaAdapter extends BaseAdapter implements SpinnerAdapter {
-        Context context;
-
-        public CategoriaAdapter(Context context) {
-            this.context = context;
-        }
-
-        @Override
-        public int getCount() {
-            return categoriaList.size();
-        }
-
-        @Override
-        public Object getItem(int position) {
-            return categoriaList.get(position);
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            /*
-            View view =  View.inflate(context, android.R.layout.simple_list_item_1, null);
-            TextView textView = (TextView) view.findViewById(R.id.main);
-            textView.setText(company[position]);
-            return textView;
-            */
-            TextView view = new TextView(context);
-            view.setText(categoriaList.get(position).titulo);
-            return view;
-        }
     }
 }

@@ -24,16 +24,18 @@ public class Producao {
 
     public static Producao fromCursor(Cursor cursor) {
         String id = cursor.getString(cursor.getColumnIndex(Contract.Producao._ID));
-        String titulo = cursor.getString(cursor.getColumnIndex(Contract.Producao.COLUMN_TITULO));
 
         int index;
+        index = cursor.getColumnIndex(Contract.Producao.COLUMN_TITULO);
+        String titulo = index == -1 ? "" : cursor.getString(index);
+
         index = cursor.getColumnIndex(Contract.Producao.COLUMN_DESCRICAO);
         String decricao = index == -1 ? "" : cursor.getString(index);
 
         index = cursor.getColumnIndex(Contract.Producao.COLUMN_DATA_INICIO);
         String inicio = index == -1 ? "" : cursor.getString(index);
 
-        index = cursor.getColumnIndex(Contract.Producao.COLUMN_DATA_INICIO);
+        index = cursor.getColumnIndex(Contract.Producao.COLUMN_DATA_FIM);
         String fim = index == -1 ? "" : cursor.getString(index);
 
         index = cursor.getColumnIndex(Contract.Producao.COLUMN_FK_CATEGORIA);

@@ -35,7 +35,7 @@ public class CategoriaActivity extends AppCompatActivity {
                 Contract.Categoria.COLUMN_TITULO,
         };
         Cursor c;
-        c = db.query(Contract.Categoria.TABLE_NAME, columns,  "", null, null, null, null);
+        c = db.query(Contract.Categoria.TABLE_NAME, columns,  "", null, null, null, Contract.Categoria._ID + " DESC");
         items = new ArrayList<>();
         while (c.moveToNext()) {
             Categoria item = Categoria.fromCursor(c);
@@ -63,7 +63,8 @@ public class CategoriaActivity extends AppCompatActivity {
         findViewById(R.id.buttonAddCategoria).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String titulo = ((TextView)findViewById(R.id.editCategoriaTitulo)).getText().toString();
+                TextView view = findViewById(R.id.editCategoriaTitulo);
+                String titulo = view.getText().toString();
                 if (titulo.isEmpty()) {
                     return;
                 }
@@ -80,6 +81,7 @@ public class CategoriaActivity extends AppCompatActivity {
                     selectedCategoria = null;
                 }
                 queryCategorias();
+                view.setText("");
             }
         });
     }

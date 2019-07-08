@@ -21,6 +21,8 @@
         <activity android:name=".ProducaoActivity" />
         <activity android:name=".ProducaoEditActivity" />
         <activity android:name=".AtividadeActivity" />
+        <activity android:name=".AtividadeEditActivity" />
+        <activity android:name=".RankingActivity" />
     </application>
 
 </manifest>
